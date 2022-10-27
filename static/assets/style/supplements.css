@@ -1,0 +1,27 @@
+.inputCheckBox{
+    width: 15px;
+    height: 15px;
+}
+
+.dropdown-item-label-text{
+    font-size: 16px;
+}
+
+.product-img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.product-name{
+    color: var(--light-header-color);
+}
+#newReleases{
+    padding-left: 50px;
+}
+
+@media(max-width:768px){
+    #newReleases{
+        padding-left: 10px;
+    }
+}

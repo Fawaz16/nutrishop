@@ -1,0 +1,24 @@
+/* My Code for service styling */
+.service-img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.design-img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+#corporateWellness li {
+  list-style-type: disc;
+}
+
+.contact-img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/*End of my code */

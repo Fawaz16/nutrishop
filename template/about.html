@@ -1,0 +1,402 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Linked Stylesheets-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+      integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{%static './assets/bootstrap-5.2.0-dist/css/bootstrap.min.css'%}"
+    />
+    <link rel="stylesheet" href="{%static './assets/style/index.css'%}" />
+    <link rel="stylesheet" href="{%static './assets/style/about.css'%}" />
+
+    <title>NUTRIPOSA -About Us</title>
+  </head>
+  <body class="changeBlackToWhite bgChangeBlackToWhite">
+    <!--Nav Section-->
+    <nav class="position-sticky navbar navbar-expand-lg px-5 py-4">
+      <a class="navbar-brand fs-1 fw-bold text-light" href="{%url 'home'%}"
+        >NUTRIPOSA</a
+      >
+      <button
+        id="navbar-toggler-btn"
+        class="btn border navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+      >
+        <span class="bi-list fs-1 text-light"></span>
+      </button>
+      <button
+        id="night-toggler"
+        class="btn py-0 px-3 position-absolute bi-toggle-off fs-1 text-light"
+      ></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul
+          class="navbar-nav ms-auto me-auto fs-5 d-flex align-items-lg-center"
+        >
+          <li class="nav-item mx-2">
+            <a class=" nav-link text-light" href="{%url 'home'%}">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{%url 'supplement' %}"
+              >Supplements</a
+            >
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{% url 'services'%}"
+              >Services</a
+            >
+          </li>
+          <li class="nav-item mx-2">
+            <a class="active nav-link text-light" href="{%url 'about'%}"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section>
+      <div class="h-text">
+        <h1>About Us</h1>
+        <p>
+          Our founder and CEO, Bryon McLendon, turned down a lucrative career
+          opportunity to pursue his passion of helping others live a fit, happy
+          and healthy lifestyle. Unemployed yet determined, he drained his bank
+          account and opened his first retail nutrition store in 1997. With
+          laser-sharp focus, he went to work every single day, morning to night.
+          His wife, Tania, a personal trainer and former college track athlete,
+          was his rock, encouraging him along the way. Within two years, Bryon
+          had opened five locations.
+        </p>
+        <p>
+          After gaining several years of knowledge and expertise in the
+          industry, Bryon decided to start his very own company, thus
+          NUTRISHOP®, Inc. was born with the first store opening in Norco,
+          California in 2003. Bryon extended the opportunity to other
+          like-minded, hard-working entrepreneurs who were passionate about
+          helping others. Founded on the pillars of honesty, integrity, trust,
+          opportunity and good ol’ fashioned hard work, our NUTRISHOP® family
+          grew.
+        </p>
+        <p style="font-size: 22px">
+          "We have store owners who hated their jobs and now they're able to do
+          something they love while changing lives for the better and providing
+          for their families," says Bryon. "That gets me excited!"
+        </p>
+      </div>
+
+      <!--Images article-->
+      <article class="container d-lg-flex px-lg-0">
+        <div class="row gx-2 gx-lg-2 gy-2 gy-lg-0">
+          <div class="col-12 col-sm-6 col-lg-3 overflow-hidden">
+            <img
+              src="https://www.nutrishopusa.com/sites/default/files/interiorphoto.png?timestamp=1557857605"
+              lazy="loading"
+              alt=""
+              class="service-img"
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 overflow-hidden">
+            <img
+              src="https://www.nutrishopusa.com/sites/default/files/exteriorphoto.png?timestamp=1557857605"
+              loading="lazy"
+              class="service-img"
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 overflow-hidden">
+            <img
+              src="https://www.nutrishopusa.com/sites/default/files/exteriorphoto.png?timestamp=1557857605"
+              loading="lazy"
+              class="service-img"
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 overflow-hidden">
+            <img
+              src="https://www.nutrishopusa.com/sites/default/files/interiorphoto3.png?timestamp=1557857605"
+              loading="lazy"
+              class="service-img"
+            />
+          </div>
+        </div>
+      </article>
+
+      <div class="h-text" style="padding-top: 30px">
+        <p>
+          In 2008, Bryon’s wife Tania left her personal training career to help
+          fill in the gaps of the NUTRISHOP® corporate team. She did everything
+          from accounting to operations. Today, she’s involved with the rep team
+          and franchisees directly to help educate them and their employees
+          through the recently launched NUTRISHOP® University program.
+        </p>
+        <p>
+          At NUTRISHOP®, we consider family to be an integral part of the
+          business. Bryon’s father, Jerry, sold his share of a successful
+          graphic design company to bring his decades of expertise to
+          NUTRISHOP®. Bryon’s talented younger brother, Marc, runs and oversees
+          the graphic design and marketing team. Bryon’s younger sister, Lacey,
+          supports our COO Brian Barthelmess, and Bryon’s youngest sister,
+          Kellie, recently came on board as the in-house photographer and
+          videographer for the marketing department.
+        </p>
+
+        <p>
+          We also consider our store owners and their staff an extension of our
+          family. We strive to support them in every way possible so they can
+          provide for their families while offering invaluable services to
+          customers across the United States and internationally.
+        </p>
+
+        <h1>19+ Years of Consumer Trust</h1>
+
+        <p>
+          Serving fit-minded individuals since 2003, NUTRISHOP®’s top priority
+          is your results. This has ultimately helped build our solid reputation
+          over the last 19+ years and keeps customers coming back to this day.
+          We respect our customers. We would never waste your time with a poor
+          product, poor service or poor support. We can all agree that honesty
+          must extend to product performance attributes. Rest assured that all
+          of these top-quality supplement brands are manufactured here in the
+          USA, under strict cGMP manufacturing practices, utilizing superior,
+          worldwide ingredients. Thank you for your trust and patronage!
+        </p>
+
+        <h1>
+          We are not your average retail nutrition company pushing unnecessary
+          products on people just to make a buck. What is Nutrishop all about?
+        </h1>
+
+        <h1>It’s About You</h1>
+        <p>
+          If you asked any NUTRISHOP® owner or employee what sets us apart from
+          our competitors other than our guaranteed low prices, hands down you’d
+          hear the difference is the relationships we build with our customers.
+        </p>
+        <p>
+          When someone comes into our stores, their goals immediately become
+          ours. Our in-store experience is very consultative, unique and custom
+          to everyone. There is not one plan, one supplement, or one supplement
+          stack to fit all individuals and their needs. We take the time to
+          educate you and make sure you are as confident in your nutrition
+          program as we are.
+        </p>
+
+        <p>
+          Plus, it just feels good getting to know our customers and helping
+          them achieve their goals! Take it from Jay Vicino, owner of the Mt.
+          Juliet, Tennessee NUTRISHOP® store: “The most gratifying thing for me
+          as a store owner is being the driving force in somebody changing their
+          life for the better,” says Jay. “I’ll gladly spend 2 hours with
+          someone if they genuinely need the help!”
+        </p>
+
+        <h1>It’s About Quality Products & Services</h1>
+        <p>
+          Whether you’re looking for a thermogenic, a potent pre-workout, a
+          delicious protein powder, healthy vitamins, BCAAs, or something else,
+          we’ve got you covered. With plenty of products to choose from, the
+          only problem you may have is deciding which ones to get!
+        </p>
+
+        <p>
+          In addition to top-quality nutritional supplements, our stores offer
+          complimentary composition assessment tools, meal plans and vital
+          nutritional support/guidance that you can’t get online. Our store
+          owners also conduct transformation challenges in-store or for
+          corporate wellness programs in their communities. Read more about our
+          services here.
+        </p>
+
+        <h1>It’s About Real Results</h1>
+        <p>
+          We’ve lost count of how many of our customers have experienced
+          life-changing results over the years. This is what drives us to do
+          what we do! Take Danae Peirce, a customer at the NUTRISHOP® in Lacey,
+          WA, who lost 40 pounds, gained lean muscle and changed the overall
+          appearance of her body thanks to store owner/nutrition consultant Amy
+          Jo Palmquest.
+        </p>
+
+        <p>
+          “My weight-loss transformation has significantly changed my life,”
+          says Danae. “Not only do I feel stronger, healthier and have more
+          energy to enjoy activities with my husband and two young daughters,
+          but I have also gained an unexpected amount of confidence.”
+        </p>
+
+        <p>
+          Typically shy and reserved, this confidence led Danae to opportunities
+          she would have never imagined herself taking. She was featured in a
+          magazine, she did a fitness photo shoot, and she spoke at a women’s
+          fitness camp. “The most exciting part, my transformation has also
+          inspired others,” she says. “Family members, friends, and
+          acquaintances have reached out to ask questions or have started their
+          own personal health transformations.”
+        </p>
+      </div>
+
+      <!--Icons article-->
+      <hr />
+      <article
+        class="container-fluid fs-1 d-flex justify-content-around py-2 my-2"
+      >
+        <div class="row gy-3 overflow-hidden">
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-pin-map"></span>
+            <span class="fs-6">Find a Nutrishop</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-bag"></span>
+            <span class="fs-6">Shop Now</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-shop"></span>
+            <span class="fs-6">Open a Nutrishop</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-instagram"></span>
+            <span class="fs-6">Instagram</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-facebook"></span>
+            <span class="fs-6">Facebook</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-chat-square-text"></span>
+            <span class="fs-6">Store Experience</span>
+          </div>
+        </div>
+      </article>
+
+      <!--Stay connected article-->
+      <article class="container-fluid service-contact py-5">
+        <div class="container d-lg-flex text-center">
+          <span class="d-block fs-1 fw-bold me-2 me-lg-5">STAY CONNECTED</span>
+          <span
+            class="d-block border p-3 flex-grow-1 rounded-3 fs-4 my-2 my-lg-0"
+            >TEXT <b>NS USA</b> TO <b>877-351-0010</b></span
+          >
+        </div>
+        <div class="container">
+          Stay connected with the Nutrishop Text Club program to receive text
+          messages on product releases, exclusive savings, giveaways, and more.
+          Consent is not a condition of purchase. Message and data rates may
+          apply. You will receive up to four automated, reoccurring messages per
+          month. Reply STOP to cancel and HELP for more information. View our
+          Terms and Privacy Policy.
+        </div>
+      </article>
+
+      <!--Subscribe today article-->
+      <article class="container d-lg-flex px-lg-0 py-5">
+        <div class="row overflow-hidden">
+          <div class="col-12 col-lg-6">
+            <p>
+              <span class="fs-2 fw-bold d-block py-2">Subscribe Today</span>
+              Stay up to date on new product releases, receive exclusive
+              savings, product and gear giveaways, and much more. Simply join by
+              filling out the fields below.
+            </p>
+            <form class="border contact-form p-3">
+              <label for="user-email" class="ps-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="user-email"
+                class="form-control"
+              />
+              <label for="zip-code" class="ps-1 mt-3">Zip Code</label>
+              <input
+                type="number"
+                name="zipCode"
+                id="zip-code"
+                class="form-control"
+              />
+              <button
+                id="signUpBtn"
+                class="btn my-3 px-4 py-2 btn-theme-control"
+              >
+                Sign up
+              </button>
+            </form>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img
+              src="{%static './assets/image/img8.png'%}"
+              class="contact-img"
+            />
+          </div>
+        </div>
+      </article>
+
+      <!--Last Article-->
+      <article
+        class="container d-lg-flex px-lg-0 py-5 justify-content-lg-between"
+      >
+        <div class="d-flex flex-column">
+          <span class="fs-3 fw-bold mb-2">NUTRIPOSA</span>
+          <span class="my-2">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <span class="mt-5">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <span class="mt-5">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <form class="border contact-form p-3 mt-5 mt-lg-0">
+            <label for="username" class="ps-1">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="form-control"
+            />
+            <label for="password" class="ps-1 mt-3">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control"
+            />
+            <button
+              id="loginBtn"
+              class="btn w-100 my-3 px-4 py-2 btn-theme-control"
+            >
+              Login
+            </button>
+            <div class="text-center">
+              <span class="d-block">Create New Account</span>
+              <span class="d-block">Request New Password</span>
+            </div>
+          </form>
+        </div>
+      </article>
+    </section>
+
+    <!--Scripts-->
+    <script src="{%static './assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static './assets/js/index.js'%}"></script>
+    <script src="{%static './assets/js/about-theme-changer.js'%}"></script>
+  </body>
+</html>
+

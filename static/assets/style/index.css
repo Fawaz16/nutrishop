@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  /* Light theme color */
+  --light-header-color: #204781;
+  --light-color: #fff;
+  --light-text-carousel-color: #0552a0;
+
+  /* Dark theme color */
+  --dark-color: #000;
+}
+
+nav {
+  background-color: var(--light-header-color);
+  top: 0;
+  z-index: 10;
+  box-shadow: 4px 4px 10px rgb(66, 66, 66);
+}
+
+#night-toggler {
+  top: 22px;
+  right: 90px;
+}
+
+#navbar-toggler-btn:focus,
+#navbar-toggler-btn:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.active {
+  border-bottom: 1px solid #fff;
+}
+
+body{
+  transition: all 0.5s ease-in-out;
+}
+
+#carousel-text {
+  background-color: var(--light-text-carousel-color);
+  color: var(--light-color);
+}
+
+.service-contact{
+  color: white;
+}
+
+#signUpBtn, #loginBtn{
+  background-color: var(--light-text-carousel-color);
+  color: var(--light-color);
+}
+
+/* Setting Specific media queries for night-toggler */
+
+/* first part styllling */
+.a-text img {
+  width: 100%;
+}
+
+.b-text {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.b-text button {
+  background-color: var(--light-header-color);
+}
+
+/* Applying Default Theme */
+
+.btn-theme-control{
+  background-color: var(--light-header-color);
+  color: var(--light-color);
+}
+
+/* On dark Mode */
+.changeWhiteToBlack{
+  color: var(--light-color);
+}
+
+
+/* On light Mode */
+.changeBlackToWhite{
+  color: var(--dark-color);
+}
+
+/* trending stylling */
+
+.carousel {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.carousel h4 {
+  color: #000000;
+  font-size: 29px;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.owl-carousel .owl-item img {
+  display: inline !important;
+}
+.owl-dot {
+  width: 15px;
+  height: 5px;
+  background-color: #b4b4b4 !important;
+  margin-right: 10px;
+  
+  transition: 0.5s ease;
+}
+.owl-dots {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.owl-dot:hover,
+.owl-dot.active {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+.cards {
+  background-color: rgb(255, 255, 255) !important;
+  box-shadow: 3px 3px 12px rgb(87, 87, 87);
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.carousel .cards img:hover,
+.cards img:focus .cards img:active .cards {
+  transform: scale(1.07) !important;
+  transition: 0.3s ease-in-out;
+}
+/*  */
+
+/*  */
+
+.c-text img {
+  width: 30%;
+}
+
+.c1-text h3 {
+  font-size: 30px;
+}
+
+.c-text button {
+  background-color: var(--light-header-color);
+}
+
+.d-text {
+  background-color: #b4b4b4;
+  margin-top: 20px;
+}
+
+/*  /*/
+.e-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+.e1-text h5 {
+  padding-top: 20px;
+}
+.e1-text {
+  box-shadow: 4px 4px 12px rgb(83, 83, 83);
+  padding: 20px;
+}
+
+.f-text form {
+  box-shadow: 4px 4px 12px rgb(77, 77, 77);
+}
+
+.g-text img {
+  padding-left: 20px;
+}
+
+.contact-img{
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+.service-contact{
+  background-color: var(--light-text-carousel-color);
+  margin-top: 30px;
+}
+
+@media (min-width: 991px) {
+  #night-toggler{
+    top: 18px;
+    right: 50px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* first part stylling */
+
+  .a-text a img {
+    width: 100%;
+    object-fit: cover;
+  }
+  /*  */
+  .b-text p {
+    padding: 20px 20px;
+  }
+  .c-text img {
+    width: 100%;
+  }
+  .c1-text {
+    padding-left: 20px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  /*  */
+  .d-text {
+    margin-top: 30px;
+  }
+  .d-text img {
+    width: 90%;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  /* / */
+
+  /*  */
+  .e1-text img {
+    width: 100%;
+  }
+  .e1-text {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .e1-text h5 {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  .e1-text p {
+    padding-left: 10px;
+  }
+  /* / */
+
+  /*  */
+  .f-text h3 {
+    font-weight: 600;
+    padding-top: 30px;
+  }
+  .f-text img {
+    width: 100%;
+  }
+  .f-text {
+    margin-left: 20px;
+    margin-top: 50px;
+  }
+
+  .f-text p {
+    width: 80%;
+    padding-top: 20px;
+    font-size: 17px;
+  }
+
+  .f-text form {
+    max-width: 500px;
+    padding-left: 30px;
+    margin-right: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .f-text form input {
+    width: 60%;
+    padding: 10x;
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+  .f-text form button {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: #0552a0;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  /*  */
+
+  .g-text img {
+    width: 20%;
+    margin: 0 auto;
+  }
+  .g-text {
+    padding-left: 70px;
+    padding-top: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .b-text p {
+    padding: 20px 140px;
+  }
+
+  .c-text {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+  }
+  .c-text img {
+    width: 30%;
+  }
+  .c1-text {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /*  */
+  .d-text img {
+    width: 100%;
+    padding: 20px 250px 0px;
+  }
+  /*  /*/
+
+  /*  */
+
+  .e1-text img {
+    width: 100%;
+  }
+  /* / */
+
+  /*  */
+  .f-text h3 {
+    font-weight: 600;
+    padding-top: 10px;
+  }
+  .f-text img {
+    width: 100%;
+  }
+  .f-text {
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .f-text p {
+    width: 80%;
+    padding-top: 10px;
+    font-size: 17px;
+    padding-bottom: 20px;
+  }
+
+  .f-text form input {
+    width: 60%;
+    padding: 10x;
+    border: none;
+    border: 1px solid grey;
+    margin-top: 10px;
+  }
+  .f-text form button {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: #0552a0;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .f-text form {
+    max-width: 400px;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+  .g-text img {
+    width: 10%;
+    margin: 0 auto;
+  }
+  .g-text {
+    padding-left: 370px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .a-text {
+    background: url(../image/banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+  }
+
+  /*  */
+  .f-text h3 {
+    font-weight: 600;
+    padding-top: 10px;
+  }
+  .f-text img {
+    width: 100%;
+  }
+  .f-text {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  .f-text p {
+    width: 80%;
+    padding-top: 10px;
+    font-size: 17px;
+  }
+
+  /* / */
+
+  .g-text img {
+    width: 10%;
+    margin: 0 auto;
+  }
+  .g-text {
+    padding-left: 470px;
+  }
+}
+
+/*  */
+
+@media (max-width: 768px) {
+  .a-text a img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+  .a-text {
+    background: url(../image/1666871040206.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+  }
+  .a-text img {
+    display: none;
+  }
+
+  .c-text {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-top: 50px;
+  }
+  .c-text img {
+    width: 30%;
+  }
+  .c1-text {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .e1-text {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 370px) {
+  #night-toggler {
+    right: 95px;
+  }
+}
+
+@media (max-width: 350px) {
+  #night-toggler {
+    right: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  #night-toggler {
+    top: 22px;
+    right: 80px;
+  }
+}
+
+@media (max-width: 317px) {
+  #night-toggler {
+    top: 18px;
+    right: 70px;
+  }
+}
+
+@media (max-width: 300px) {
+  #night-toggler {
+    display: none;
+  }
+}

@@ -1,0 +1,773 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Linked Stylesheets-->
+    <link
+      rel="shortcut icon"
+      href="https://www.nutrishopusa.com/sites/all/themes/nutrblue/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+      integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{%static './assets/bootstrap-5.2.0-dist/css/bootstrap.min.css'%}"
+    />
+    <link rel="stylesheet" href="{% static './assets/style/index.css'%}" />
+    <link
+      rel="stylesheet"
+      href="{% static './assets/style/supplements.css'%}"
+    />
+
+    <title>NUTRIPOSA - Supplements</title>
+  </head>
+  <body class="changeBlackToWhite bgChangeBlackToWhite">
+    <!--Nav Section-->
+    <nav class="position-sticky navbar navbar-expand-lg px-5 py-4">
+      <a class="navbar-brand fs-1 fw-bold text-light" href="{%url 'home'%}"
+        >NUTRIPOSA</a
+      >
+      <button
+        id="navbar-toggler-btn"
+        class="btn border navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+      >
+        <span class="bi-list fs-1 text-light"></span>
+      </button>
+      <button
+        id="night-toggler"
+        class="btn py-0 px-3 position-absolute bi-toggle-off fs-1 text-light"
+      ></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul
+          class="navbar-nav ms-auto me-auto fs-5 d-flex align-items-lg-center"
+        >
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{%url 'home'%}">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="active nav-link text-light" href="{%url 'supplement' %}"
+              >Supplements</a
+            >
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{% url 'services'%}"
+              >Services</a
+            >
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{%url 'about'%}"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <article class="container mt-5">
+      <div class="row">
+        <!--Product list drop down-->
+        <div class="col-lg-3">
+          <div class="mt-2 mt-lg-0">
+            <div class="dropdown text-start border">
+              <buton
+                class="postion-relative btn dropdown-toggle w-100 text-end changeBlackToWhite"
+                data-bs-toggle="dropdown"
+              >
+                <span class="position-absolute start-0 ps-2">
+                  Select a Product</span
+                >
+              </buton>
+              <ul class="dropdown-menu w-100 px-2">
+                <li><input class="dropdown-item border" type="text" /></li>
+                <li><a class="dropdown-item" href="#">TURMERIC</a></li>
+                <li><a class="dropdown-item" href="#">VITAMIN C</a></li>
+                <li><a class="dropdown-item" href="#">VITAMIN D3</a></li>
+                <li><a class="dropdown-item" href="#">ZINC</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--Filter by Brand drop down-->
+        <div class="col-lg-3">
+          <div class="mt-2 mt-lg-0">
+            <div class="dropdown text-start border">
+              <buton
+                class="postion-relative btn dropdown-toggle w-100 text-end changeBlackToWhite"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+              >
+                <span class="position-absolute start-0 ps-2">
+                  Filter by Brand</span
+                >
+              </buton>
+              <ul class="dropdown-menu w-100 px-2">
+                <li>
+                  <span class="dropdown-item d-inline-flex align-items-center">
+                    <input
+                      id="vitasportItems"
+                      type="checkbox"
+                      class="inputCheckBox"
+                    />
+                    <label
+                      for="vitasportItems"
+                      class="dropdown-item-label w-100"
+                      >&nbspVitasport</label
+                    >
+                  </span>
+                </li>
+                <li>
+                  <span class="dropdown-item d-inline-flex align-items-center">
+                    <input
+                      id="supplementStacksItems"
+                      type="checkbox"
+                      class="inputCheckBox"
+                    />
+                    <label
+                      for="supplementStacksItems"
+                      class="dropdown-item-label w-100"
+                      >&nbspSupplement Stacks</label
+                    >
+                  </span>
+                </li>
+                <li>
+                  <span class="dropdown-item d-inline-flex align-items-center">
+                    <input
+                      id="pHLabsItems"
+                      type="checkbox"
+                      class="inputCheckBox"
+                    />
+                    <label for="pHLabsItems" class="dropdown-item-label w-100"
+                      >&nbsppH Labs</label
+                    >
+                  </span>
+                </li>
+                <li>
+                  <span class="dropdown-item d-inline-flex align-items-center">
+                    <input
+                      id="NyctoNutraItems"
+                      type="checkbox"
+                      class="inputCheckBox"
+                    />
+                    <label
+                      for="NyctoNutraItems"
+                      class="dropdown-item-label w-100"
+                      >&nbspEVOchem Nutrition
+                    </label>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--Filter by Category drop down-->
+        <div class="col-lg-3">
+          <div class="mt-2 mt-lg-0">
+            <div class="dropdown text-start border">
+              <buton
+                class="postion-relative btn dropdown-toggle w-100 text-end"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+              >
+                <span class="position-absolute start-0 ps-2 changeBlackToWhite">
+                  Filter by Category</span
+                >
+              </buton>
+              <ul class="dropdown-menu w-100 px-2">
+                <li>
+                  <span class="dropdown-item d-inline-flex align-items-center">
+                    <input
+                      id="popularStacksItems"
+                      type="checkbox"
+                      class="inputCheckBox"
+                    />
+                    <label
+                      for="popularStacksItems"
+                      class="dropdown-item-label w-100"
+                      >&nbspPopular Stacks</label
+                    >
+                  </span>
+                </li>
+                <li>
+                  <span class="dropdown-item d-inline-flex align-items-center">
+                    <input
+                      id="newReleasesItems"
+                      type="checkbox"
+                      class="inputCheckBox"
+                    />
+                    <label
+                      for="newReleasesItems"
+                      class="dropdown-item-label w-100"
+                      >&nbspNew Releases</label
+                    >
+                  </span>
+                </li>
+                <li>
+                  <span class="dropdown-item d-inline-flex align-items-center">
+                    <input
+                      id="sleepItems"
+                      type="checkbox"
+                      class="inputCheckBox"
+                    />
+                    <label for="sleepItems" class="dropdown-item-label w-100"
+                      >&nbspSleep</label
+                    >
+                  </span>
+                </li>
+                <li>
+                  <span class="dropdown-item d-inline-flex align-items-center">
+                    <input
+                      id="proteinItems"
+                      type="checkbox"
+                      class="inputCheckBox"
+                    />
+                    <label for="proteinItems" class="dropdown-item-label w-100"
+                      >&nbspProtein</label
+                    >
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--Button Div-->
+        <div class="col-lg-3">
+          <div class="d-flex px-2 py-3 py-lg-0">
+            <button id="apply" class="btn btn-theme-control w-100 me-1 me-lg-1">
+              Apply
+            </button>
+            <button id="clear-filter" class="btn btn-theme-control w-100">
+              Clear Filter
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <p class="container py-5">
+      <span id="popular" class="fs-2 fw-bold d-block py-2">Popular Stacks</span>
+      Stacking supplements is common practice in the health and fitness
+      community. It involves strategically combining products in order to create
+      a synergistic bond between the respective supplements being stacked. The
+      objective is greater effectiveness and overall results in a shorter period
+      of time. We’ve compiled the most popular and efficacious supplement stacks
+      to simplify your shopping experience. Whether you’re looking to build lean
+      muscle, boost your metabolism, increase endurance, enhance recovery or
+      simply focus on overall health, we’ve got a stack for that..
+    </p>
+
+    <!--Popular-->
+    <article class="container d-lg-flex px-lg-0">
+      <!-- for loop -->
+      {%for popular in popular|slice:'0:1' %}
+      <div class="row gx-2 gx-lg-2 gy-2 gy-lg-0">
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{popular.image.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{popular.title}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{popular.body}}</span
+            >
+            <a href="{{popular.Link}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{popular.image2.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{popular.title2}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{popular.body2}}</span
+            >
+            <a href="{{popular.Link2}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{popular.image3.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center text-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{popular.title3}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{popular.body3}}</span
+            >
+            <a href="{{popular.Link3}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{popular.image4.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center text-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{popular.title4}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{popular.body4}}}</span
+            >
+            <a href="{{popular.Link4}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+      <!--  -->
+    </article>
+    
+    <!--New Release-->
+    <span id="newReleases" class="fs-2 fw-bold d-block py-2 mb-2">
+      New Releases
+    </span>
+    <article class="container d-lg-flex px-lg-0">
+      
+      <!-- for loop -->
+      {%for new in new|slice:'0:1' %}
+      <div class="row gx-2 gx-lg-2 gy-2 gy-lg-0">
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{new.image.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{new.title}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{new.body}}</span
+            >
+            <a href="{{new.Link}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{new.image2.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{new.title2}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto"
+              >{{new.body2}}</span
+            >
+            <a href="{{new.Link2}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{new.image3.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center text-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{new.title3}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{new.body3}}</span
+            >
+            <a href="{{new.Link3}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{new.image4.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center text-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{new.title4}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{new.body4}}}</span
+            >
+            <a href="{{new.Link4}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+      <!--  -->
+    </article>
+
+    <!--Sleep-->
+       <span id="newReleases" class="fs-2 fw-bold d-block py-2 mb-2">
+        Sleep
+      </span>
+      <article class="container d-lg-flex px-lg-0">
+        
+        <!-- for loop -->
+        {%for new in sleep|slice:'0:1' %}
+        <div class="row gx-2 gx-lg-2 gy-2 gy-lg-0">
+          <div
+            class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+          >
+            <img
+              src="{{new.image.url}}"
+              loading="lazy"
+              class="product-img"
+            />
+  
+            <div
+              class="d-flex flex-column justify-content-center align-items-center"
+            >
+              <span class="fs-5 fw-bold produce-category">{{new.title}}</span>
+              <span
+                class="fw-bold mt-2 mb-2 product-name overflow-auto "
+                >{{new.body}}</span
+              >
+              <a href="{{new.Link}}">
+              <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+              </a>
+            </div>
+          </div>
+  
+          <div
+            class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+          >
+            <img
+              src="{{new.image2.url}}"
+              loading="lazy"
+              class="product-img"
+            />
+            <div
+              class="d-flex flex-column justify-content-center align-items-center"
+            >
+              <span class="fs-5 fw-bold produce-category">{{new.title2}}</span>
+              <span
+                class="fw-bold mt-2 mb-2 product-name overflow-auto "
+                >{{new.body2}}</span
+              >
+              <a href="{{new.Link2}}">
+              <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+              </a>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+          >
+            <img
+              src="{{new.image3.url}}"
+              loading="lazy"
+              class="product-img"
+            />
+            <div
+              class="d-flex flex-column justify-content-center align-items-center text-center"
+            >
+              <span class="fs-5 fw-bold produce-category">{{new.title3}}</span>
+              <span
+                class="fw-bold mt-2 mb-2 product-name overflow-auto "
+                >{{new.body3}}</span
+              >
+              <a href="{{new.Link3}}">
+              <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+              </a>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+          >
+            <img
+              src="{{new.image4.url}}"
+              loading="lazy"
+              class="product-img"
+            />
+            <div
+              class="d-flex flex-column justify-content-center align-items-center text-center"
+            >
+              <span class="fs-5 fw-bold produce-category">{{new.title4}}</span>
+              <span
+                class="fw-bold mt-2 mb-2 product-name overflow-auto "
+                >{{new.body4}}}</span
+              >
+              <a href="{{new.Link4}}">
+              <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+        <!--  -->
+      </article>
+
+    <!--Protein-->
+    <article class="container d-lg-flex flex-lg-column px-lg-0 mt-5">
+      <span id="newReleases" class="fs-2 fw-bold d-block py-2 mb-2">
+        Protein
+      </span>
+      <!-- for loop -->
+      {%for protein in protein|slice:'0:1' %}
+      <div class="row gx-2 gx-lg-2 gy-2 gy-lg-0">
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{protein.image.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{protein.title}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{protein.body}}</span
+            >
+            <a href="{{protein.Link}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{protein.image2.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{protein.title2}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{protein.body2}}</span
+            >
+            <a href="{{protein.Link2}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{protein.image3.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center text-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{protein.title3}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{protein.body3}}</span
+            >
+            <a href="{{protein.Link3}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-12 col-sm-6 col-lg-3 overflow-hidden border px-0 py-3 px-sm-2 px-lg-3"
+        >
+          <img
+            src="{{protein.image4.url}}"
+            loading="lazy"
+            class="product-img"
+          />
+          <div
+            class="d-flex flex-column justify-content-center align-items-center text-center"
+          >
+            <span class="fs-5 fw-bold produce-category">{{protein.title4}}</span>
+            <span
+              class="fw-bold mt-2 mb-2 product-name overflow-auto "
+              >{{protein.body4}}}</span
+            >
+            <a href="{{protein.Link4}}">
+            <button class="btn px-5 py-2 btn-theme-control">Read More</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+      <!--  -->
+    </article>
+
+    <!--Icons article-->
+    <hr />
+    <article
+      class="container-fluid fs-1 d-flex justify-content-around py-2 my-2"
+    >
+      <div class="row gy-3 overflow-hidden">
+        <div class="col-4 d-flex flex-column text-center">
+          <span class="bi-pin-map"></span>
+          <span class="fs-6">Find a Nutrishop</span>
+        </div>
+        <div class="col-4 d-flex flex-column text-center">
+          <span class="bi-bag"></span>
+          <span class="fs-6">Shop Now</span>
+        </div>
+        <div class="col-4 d-flex flex-column text-center">
+          <span class="bi-shop"></span>
+          <span class="fs-6">Open a Nutrishop</span>
+        </div>
+        <div class="col-4 d-flex flex-column text-center">
+          <span class="bi-instagram"></span>
+          <span class="fs-6">Instagram</span>
+        </div>
+        <div class="col-4 d-flex flex-column text-center">
+          <span class="bi-facebook"></span>
+          <span class="fs-6">Facebook</span>
+        </div>
+        <div class="col-4 d-flex flex-column text-center">
+          <span class="bi-chat-square-text"></span>
+          <span class="fs-6">Store Experience</span>
+        </div>
+      </div>
+    </article>
+
+    <!--Stay connected article-->
+    <article class="container-fluid service-contact py-5">
+      <div class="container d-lg-flex text-center">
+        <span class="d-block fs-1 fw-bold me-2 me-lg-5">STAY CONNECTED</span>
+        <span class="d-block border p-3 flex-grow-1 rounded-3 fs-4 my-2 my-lg-0"
+          >TEXT <b>NS USA</b> TO <b>877-351-0010</b></span
+        >
+      </div>
+      <div class="container">
+        Stay connected with the Nutrishop Text Club program to receive text
+        messages on product releases, exclusive savings, giveaways, and more.
+        Consent is not a condition of purchase. Message and data rates may
+        apply. You will receive up to four automated, reoccurring messages per
+        month. Reply STOP to cancel and HELP for more information. View our
+        Terms and Privacy Policy.
+      </div>
+    </article>
+
+    <!--Last Article-->
+    <article
+      class="container d-lg-flex px-lg-0 py-5 justify-content-lg-between"
+    >
+      <div class="d-flex flex-column">
+        <span class="fs-3 fw-bold mb-2">NUTRIPOSA</span>
+        <span class="my-2">Find a Nutrishop</span>
+        <span class="my-2">Open a Nutrishop</span>
+        <span class="my-2">About Us</span>
+      </div>
+      <div class="d-flex flex-column">
+        <span class="mt-5">Find a Nutrishop</span>
+        <span class="my-2">Open a Nutrishop</span>
+        <span class="my-2">About Us</span>
+        <span class="my-2">About Us</span>
+      </div>
+      <div class="d-flex flex-column">
+        <span class="mt-5">Find a Nutrishop</span>
+        <span class="my-2">Open a Nutrishop</span>
+        <span class="my-2">About Us</span>
+      </div>
+      <div class="d-flex flex-column">
+        <form class="border contact-form p-3 mt-5 mt-lg-0">
+          <label for="username" class="ps-1">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            class="form-control"
+          />
+          <label for="password" class="ps-1 mt-3">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+          />
+          <button
+            id="loginBtn"
+            class="btn w-100 my-3 px-4 py-2 btn-theme-control"
+          >
+            Login
+          </button>
+          <div class="text-center">
+            <span class="d-block">Create New Account</span>
+            <span class="d-block">Request New Password</span>
+          </div>
+        </form>
+      </div>
+    </article>
+
+    <!--Scripts-->
+    <script src="{% static './assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static './assets/js/index.js' %}"></script>
+    <script src="{% static './assets/js/supplements-theme-changer.js' %}"></script>
+  </body>
+</html>
+

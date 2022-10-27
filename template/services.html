@@ -1,0 +1,257 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Linked Stylesheets-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static './assets/bootstrap-5.2.0-dist/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static './assets/style/index.css'%}">
+    <link rel="stylesheet" href="{%static './assets/style/services.css'%}">
+    
+    <title>NUTRIPOSA - Services</title>
+</head>
+<body class="changeBlackToWhite bgChangeBlackToWhite">
+    <!--Nav Section-->
+    <nav class="position-sticky navbar navbar-expand-lg px-5 py-4">
+      <a class="navbar-brand fs-1 fw-bold text-light" href="{%url 'home'%}"
+        >NUTRIPOSA</a
+      >
+      <button
+        id="navbar-toggler-btn"
+        class="btn border navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+      >
+        <span class="bi-list fs-1 text-light"></span>
+      </button>
+      <button
+        id="night-toggler"
+        class="btn py-0 px-3 position-absolute bi-toggle-off fs-1 text-light"
+      ></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul
+          class="navbar-nav ms-auto me-auto fs-5 d-flex align-items-lg-center"
+        >
+          <li class="nav-item mx-2">
+            <a class=" nav-link text-light" href="{%url 'home'%}">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{%url 'supplement' %}"
+              >Supplements</a
+            >
+          </li>
+          <li class="nav-item mx-2">
+            <a class="actve nav-link text-light" href="{% url 'services'%}"
+              >Services</a
+            >
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{%url 'about'%}"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <!-- Our Services Head text paragraph-->
+      <p class="container py-5">
+        <span class="fs-2 fw-bold d-block py-2">Our Services</span>
+        With the first location opening in 2003 and now approaching 200 locations nationwide, NUTRISHOP® stores offer customers a broad spectrum of top quality, cutting-edge dietary and nutritional supplements from top brands with a low-price guarantee along with exceptional, individualized customer service in assisting them in achieving their health and fitness goals. To advance this mission, our company promotes the following essential principles; integrity, professionalism, teamwork, leadership, compliance, equal access, education, mentorship, efficiency, reliability, and execution. This is the NUTRISHOP® way.
+      </p>
+
+      <!--Images article-->
+      <article class="container d-lg-flex px-lg-0 ">
+        <div class="row gx-2 gx-lg-2 gy-2 gy-lg-0">
+          <div class="col-12 col-sm-6 col-lg-3 overflow-hidden">
+            <img src="{%static './assets/image/img1.jpg'%}" class="service-img">
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 overflow-hidden">
+            <img src="{%static './assets/image/img2.jpg'%}" class="service-img">
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 overflow-hidden">
+            <img src="{%static './assets/image/img3.jpg' %}" class="service-img">
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 overflow-hidden">
+            <img src="{%static './assets/image/img4.jpg'%}" class="service-img">
+          </div>
+        </div>
+      </article>
+
+      <!--Customized meal article-->
+      <article class="container d-lg-flex px-lg-0 py-5">
+        <div class="row w-100">
+          <div class="col-12 col-lg-9">
+            <p class="">
+              <span class="fs-2 fw-bold d-block py-2 w-100">Customized Meal Plans</span>
+              No fad diets or cookie-cutter meal plans here! With all of the overwhelming and abundant information available in regards to diets and nutrition, it can be challenging to decide which program works for you.<br/> Let us do the hard work for you! Come into any of our Nutrishop locations nationwide and let our trained and knowledgeable staff customize a FREE meal plan that is tailored precisely to you and your goals.The steps are simple: Stop by your local Nutrishop and let us know your goals.<br/> Take a quick, easy, and noninvasive InBody analysis that will provide us with the specific information to customize the best plan for you. That’s it! You’ll be on your way, confident and prepared to transform into the best version of YOU!.<br/> The professionals at Nutrishop are committed to supporting you throughout your journey and lifestyle change. We encourage and welcome you to stop in every two weeks to track your progress which will allow us to make the necessary adjustments to reach your goals.<br/>
+            </p>
+          </div>
+          <div class="col-12 d-flex justify-content-center col-lg-3">
+            <img src="{%static './assets/image/img5.jpg'%}" class="design-img">
+          </div>
+        </div>
+      </article>
+
+      <!--Body Composition Analysis article-->
+      <article class="container d-lg-flex px-lg-0 py-5">
+        <div class="row w-100">
+          <div class="col-12 col-lg-9">
+            <p class="">
+              <span class="fs-2 fw-bold d-block py-2 w-100">Body Composition Analysis</span>
+              Do you know what you are made of? Are you currently dieting, looking to get in shape, or striving to maximize your performance? Go beyond the scale with our non-invasive body composition scans that provide a detailed breakdown of your weight in terms of muscle, fat, and water. The scans only take anywhere from 15–120 seconds, depending on the model being used.<br/>Body composition analysis is essential to goal setting and vital to completely understanding the relationship between health and weight, as traditional methods can be misleading. Your health is dependent on more than just your weight, therefore, having a clear overview of what you’re made of will help us tailor your diet, exercise and supplement plan to meet your specific goals.<br/> Whether you are looking to shed a few unwanted pounds or experience a complete body transformation, the data provided by our body composition scans is crucial to your health and fitness journey. The easy to understand results sheet contains the amounts and percentages of fat and muscle throughout the body and how your individual body composition compares to a projected healthy range. Don’t worry, a trained Nutrishop team member will review your initial results and all follow-up results with you, offering guidance and support all along the way.<br/>
+            </p>
+          </div>
+          <div class="col-12 d-flex justify-content-center col-lg-3">
+            <img src="{%static '../assets/image/img6.png'%}" class="design-img">
+          </div>
+        </div>
+      </article>
+
+      <!--Transformation challenges article-->
+      <article class="container d-lg-flex px-lg-0 py-5">
+        <div class="row w-100">
+          <div class="col-12 col-lg-9">
+            <p class="">
+              <span class="fs-2 fw-bold d-block py-2 w-100">Transformation Challenges</span>
+              If you don’t challenge yourself, you won’t change! Fight every excuse, disregard doubt, prioritize your busy schedule and commit to a Nutrishop Transformation Challenge near you!  Whether your goal is to reduce body fat, increase muscle or improve your energy levels and well-being, a Nutrishop Transformation Challenge may be exactly what you’ve been waiting for. With endless reasons to start your health and fitness journey to become the best version of you, the time to get started is now!  Allow Nutrishop to become your accountability partner to help you push yourself beyond your boundaries, crush your goals and exceed your limitations.  Visit your local Nutrishop and join the next Transformation Challenge today!. <br/>By joining a Transformation Challenge, you will receive a FREE customized meal plan, a FREE InBody Analysis to help analyze your body composition and track your progress coupled with proper guidance from a Nutrishop staff member. By committing to a Nutrishop Transformation Challenge, you will experience full-time support and coaching, accountability, and the opportunity to become a part of our community of change. Rules, regulations and prizes may vary by location, but everyone who commits will experience change! <br/>
+            </p>
+          </div>
+          <div class="col-12 d-flex justify-content-center col-lg-3">
+            <img src="{%static './assets/image/img7.jpg'%}" class="design-img">
+          </div>
+        </div>
+      </article>
+
+      <!--Corporate wellness event article-->
+      <article class="container">
+        <p class="py-5 mx-0 px-0">
+          <span class="fs-2 fw-bold d-block py-2">Corporate Wellness Events</span>
+          Most companies can get behind the idea that health, happiness and productivity in the workplace are related concepts. But many have struggled to figure out how to connect all three in a work environment. The struggle is over! Set up a FREE Corporate Wellness Event with NUTRISHOP® today!
+          <br/>
+          Your team can transform and so can your business! By signing up for a Corporate Wellness Event with NUTRISHOP®, your business outcome could potentially include lower absenteeism, higher job satisfaction, improved work productivity, higher employee retention, lower health-care costs, team building and a better working culture.
+          <br/>
+          No need to leave the office, skip a lunch, or work overtime. NUTRISHOP® will conveniently come to you. All you need to do is locate your nearest NUTRISHOP® location by clicking here, and let us know you’d like to schedule a FREE Corporate Wellness Event. We’ll take it from there!
+          <br/>
+          <span>Corporate Wellness Events Include:</span>
+          <ul id="corporateWellness">
+            <li><b>FREE</b> InBody Analysis</li>
+            <li><b>FREE</b> Custom Meal Plans</li>
+            <li><b>FREE</b> Wellness Seminar</li>
+            <li><b>FREE</b> Health Coaching</li>
+            <li><b>FREE</b> Transformation Challenge </li>
+          </ul>
+        </p>
+      </article>
+
+      <!--Icons article-->
+      <hr/>
+      <article class="container-fluid fs-1 d-flex justify-content-around py-2 my-2">
+        <div class="row gy-3 overflow-hidden">
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-pin-map"></span>
+            <span class="fs-6">Find a Nutrishop</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-bag"></span>
+            <span class="fs-6">Shop Now</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-shop"></span>
+            <span class="fs-6">Open a Nutrishop</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-instagram"></span>
+            <span class="fs-6">Instagram</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-facebook"></span>
+            <span class="fs-6">Facebook</span>
+          </div>
+          <div class="col-4 d-flex flex-column text-center">
+            <span class="bi-chat-square-text"></span>
+            <span class="fs-6">Store Experience</span>
+          </div>
+        </div>
+      </article>
+
+      <!--Stay connected article-->
+      <article class="container-fluid service-contact py-5" >
+        <div class="container d-lg-flex text-center" >
+          <span class="d-block fs-1 fw-bold me-2 me-lg-5">STAY CONNECTED</span>
+          <span class="d-block border p-3 flex-grow-1 rounded-3 fs-4 my-2 my-lg-0">TEXT <b>NS USA</b> TO <b>877-351-0010</b></span>
+        </div>
+        <div class="container">
+          Stay connected with the Nutrishop Text Club program to receive text messages on product releases, exclusive savings, giveaways, and more. Consent is not a condition of purchase. Message and data rates may apply. You will receive up to four automated, reoccurring messages per month. Reply STOP to cancel and HELP for more information. View our Terms and Privacy Policy.
+        </div>
+      </article>
+
+      <!--Subscribe today article-->
+      <article class="container d-lg-flex px-lg-0 py-5">
+        <div class="row overflow-hidden">
+          <div class="col-12 col-lg-6">
+            <p>
+              <span class="fs-2 fw-bold d-block py-2">Subscribe Today</span>
+              Stay up to date on new product releases, receive exclusive savings, product and gear giveaways, and much more. Simply join by filling out the fields below.
+            </p>
+            <form class="border contact-form p-3">
+              <label for="user-email" class="ps-1">Email</label>
+              <input type="email" name="email" id="user-email" class="form-control">
+              <label for="zip-code" class="ps-1 mt-3">Zip Code</label>
+              <input type="number" name="zipCode" id="zip-code" class="form-control"> 
+              <button id="signUpBtn" class="btn my-3 px-4 py-2 btn-theme-control">Sign up</button>
+            </form>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img src="{%static './assets/image/img8.png'%}" class="contact-img">
+          </div>
+        </div>
+      </article>
+
+      <!--Last Article-->
+      <article class="container d-lg-flex px-lg-0 py-5 justify-content-lg-between">
+        <div class="d-flex flex-column">
+          <span class="fs-3 fw-bold mb-2">NUTRIPOSA</span>
+          <span class="my-2">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <span class="mt-5">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <span class="mt-5">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <form class="border contact-form p-3 mt-5 mt-lg-0">
+            <label for="username" class="ps-1">Username</label>
+            <input type="text" name="username" id="username" class="form-control">
+            <label for="password" class="ps-1 mt-3">Password</label>
+            <input type="password" name="password" id="password" class="form-control"> 
+            <button id="loginBtn" class="btn w-100 my-3 px-4 py-2 btn-theme-control">Login</button>
+            <div class="text-center">
+              <span class="d-block">Create New Account</span>
+              <span class="d-block">Request New Password</span>
+            </div>
+          </form>
+        </div>
+      </article>
+
+      <!--Scripts-->
+      <script src="{%static './assets/js/services-theme-changer.js'%}"></script>
+      <script src="{%static './assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js'%}"></script>
+      <script src="{%static './assets/js/index.js'%"></script>
+     
+</body>
+</html>

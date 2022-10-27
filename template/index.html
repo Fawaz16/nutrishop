@@ -1,0 +1,406 @@
+
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Linked Stylesheets-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+      integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{%static './assets/bootstrap-5.2.0-dist/css/bootstrap.min.css'%}"
+    />
+    <link rel="stylesheet" href="{% static './assets/style/index.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+
+    <title>NUTRIPOSA - Home</title>
+  </head>
+  <body class="changeBlackToWhite bgChangeBlackToWhite">
+    <!--Nav Section-->
+    <nav class="position-sticky navbar navbar-expand-lg px-5 py-4">
+      <a class="navbar-brand fs-1 fw-bold text-light" href="{%url 'home'%}"
+        >NUTRIPOSA</a
+      >
+      <button
+        id="navbar-toggler-btn"
+        class="btn border navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+      >
+        <span class="bi-list fs-1 text-light"></span>
+      </button>
+      <button
+        id="night-toggler"
+        class="btn py-0 px-3 position-absolute bi-toggle-off fs-1 text-light"
+      ></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul
+          class="navbar-nav ms-auto me-auto fs-5 d-flex align-items-lg-center"
+        >
+          <li class="nav-item mx-2">
+            <a class="active nav-link text-light" href="{%url 'home'%}">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{%url 'supplement' %}"
+              >Supplements</a
+            >
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{% url 'services'%}"
+              >Services</a
+            >
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-light" href="{%url 'about'%}"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- first part of the code -->
+
+    <main>
+      <a href="">
+        <div class="a-text">
+          <img
+            src="https://www.nutrishopusa.com/sites/default/files/carousel/ns_storeimage_masthead_mobile_v01.jpg"
+            alt=""
+          />
+        </div>
+      </a>
+
+      <!--  -->
+
+      <div class="b-text">
+        <h1>Dependable. Personable. Trusted.</h1>
+        <p>
+          Since 2003, we have helped individuals like you achieve various health
+          and fitness goals by offering top-quality dietary and nutritional
+          supplements and services coupled with unparalleled personalized
+          attention – all at guaranteed low prices. At Nutrishop®, our focus is
+          on your results!
+        </p>
+        <a href="{%url 'supplement' %}">
+          <button class="btn py-2 px-3 mb-5 btn-theme-control">
+            Shop all products
+          </button>
+        </a>
+      </div>
+
+      <hr />
+
+      <!-- Trending section -->
+
+      <div class="carousel">
+        <h4>Trending</h4>
+        <div class="bb-text owl-carousel">
+
+          {%for trending in trending %}
+          <div class="cards">
+            <a href="" style="text-decoration: none; color: black">
+              <img
+                src="{{trending.image.url}}"
+                alt=""
+              />
+              <h4>{{trending.title}}</h4>
+              <p>
+               {{trending.body|truncatechars:100}}
+              </p>
+              <a href="{{trending.Link}}">
+                <button class="btn py-2 px-3 mb-5 btn-theme-control">
+                  Learn more
+                </button>
+            </a>
+          </div>
+
+          {%endfor%}
+        </div>
+      </div>
+
+      <!-- the slider section -->
+
+      <section class="py-4">
+        <div
+          id="carousel-text"
+          class="container-fluid carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner container py-5">
+            <div class="carousel-item active px-5 border-0">
+              <span class="d-block w-100 fs-5 fst-italic"
+                >"Nutrishop was an awesome experience. Love their products and
+                customer service. They knew a lot about products and were able
+                to put together a package easy for me and my goals."</span
+              >
+            </div>
+            <div class="carousel-item px-5 border-0">
+              <span class="d-block w-100 fs-5 fst-italic"
+                >"I used to be intimidated to go into these types of stores. One
+                day my sister dragged me in and I left signed up for the 9-week
+                challenge! I've been in this location a few times and have never
+                felt judged or shamed. The staff is always very friendly and
+                helpful and now I look forward to my next weigh-in."</span
+              >
+            </div>
+            <div class="carousel-item px-5 border-0">
+              <span class="d-block w-100 fs-5 fst-italic"
+                >"Love the Nutrishop located near me! We definitely needed them
+                in the area, the girls in the store are always very helpful and
+                nice. They will let you try things out to see if you like the
+                flavor. The InBody machine is way cool. I am up 4% lean muscle
+                and down 3% body fat. I will definitely be a customer for life
+                there!"</span
+              >
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carousel-text"
+            role="button"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carousel-text"
+            role="button"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </section>
+
+      <!--  -->
+
+      <div class="c-text">
+        <img
+          src="https://www.nutrishopusa.com/sites/default/files/instore_760px_b.png?timestamp=1558487582"
+          alt=""
+        />
+        <div class="c1-text">
+          <h3>In store experience</h3>
+          <p>
+            When you come into one of our stores, your goals immediately become
+            ours. Our team of dedicated professionals at NUTRISHOP® are
+            committed to you and your personal needs. Our in-store experience is
+            very consultative, unique and custom to everyone. We understand that
+            one size does not fit all. There is not one plan, one supplement, or
+            one supplement stack to fit all individuals and their needs. Our
+            customer service, knowledge, and individualized attention is simply
+            unmatched. We take the time to educate you and make sure you are as
+            confident in your nutrition program as we are. This is the
+            NUTRISHOP® way.
+          </p>
+
+          <a href="">
+            <button class="btn px-3 py-2 btn-theme-control">
+              Find a nutrishop
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="d-text">
+        <img
+          src="https://www.nutrishopusa.com/sites/default/files/featured1.png?timestamp=1558466690"
+          alt=""
+        />
+      </div>
+      <!-- / -->
+
+
+<div class="i-text">
+  <h1 style="text-align: center; padding-bottom: 30px; padding-top: 20px;">Our blog</h1>
+</div>
+
+      <!--  -->
+      <div class="container e-text">
+        <div class="row gy-3 d-flex justify-content-center">
+          <!-- for loop -->
+          {%for blog in blog %}
+          <div class="col-12 col-lg-6 d-flex justify-content-center">
+            <div class="e1-text">
+              <a href="{%url 'product' blog.id %}" style="text-decoration: none; color: black">
+                <img
+                  src="{{blog.image.url}}"
+                  alt=""
+                />
+                <h5 class="changeBlackToWhite">
+                 {{blog.title}}
+                </h5>
+                <p class="changeBlackToWhite">
+                  {{blog.body|truncatechars:100}}
+                </p>
+              </a>
+            </div>
+          </div>
+          {%endfor%}
+          <!-- end loop -->
+    
+      
+          </div>
+        </div>
+      </div>
+
+      <!-- / -->
+
+      <article class="container-fluid service-contact py-5">
+        <div class="container d-lg-flex text-center">
+          <span class="d-block fs-1 fw-bold me-2 me-lg-5">STAY CONNECTED</span>
+          <span
+            class="d-block border p-3 flex-grow-1 rounded-3 fs-4 my-2 my-lg-0"
+            >TEXT <b>NS USA</b> TO <b>877-351-0010</b></span
+          >
+        </div>
+        <div class="container">
+          Stay connected with the Nutrishop Text Club program to receive text
+          messages on product releases, exclusive savings, giveaways, and more.
+          Consent is not a condition of purchase. Message and data rates may
+          apply. You will receive up to four automated, reoccurring messages per
+          month. Reply STOP to cancel and HELP for more information. View our
+          Terms and Privacy Policy.
+        </div>
+      </article>
+
+      <!--Subscribe today article-->
+      <article class="container d-lg-flex px-lg-0 py-5">
+        <div class="row overflow-hidden">
+          <div class="col-12 col-lg-6">
+            <p>
+              <span class="fs-2 fw-bold d-block py-2">Subscribe Today</span>
+              Stay up to date on new product releases, receive exclusive
+              savings, product and gear giveaways, and much more. Simply join by
+              filling out the fields below.
+            </p>
+            <form class="border contact-form p-3">
+              <label for="user-email" class="ps-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="user-email"
+                class="form-control"
+              />
+              <label for="zip-code" class="ps-1 mt-3">Zip Code</label>
+              <input
+                type="number"
+                name="zipCode"
+                id="zip-code"
+                class="form-control"
+              />
+              <button
+                id="signUpBtn"
+                class="btn my-3 px-4 py-2 btn-theme-control"
+              >
+                Sign up
+              </button>
+            </form>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <img src="{%static './assets/image/img8.png'%}" class="contact-img" />
+          </div>
+        </div>
+      </article>
+      <!--Last Article-->
+      <article
+        class="container d-lg-flex px-lg-0 py-5 justify-content-lg-between"
+      >
+        <div class="d-flex flex-column">
+          <span class="fs-3 fw-bold mb-2">NUTRIPOSA</span>
+          <span class="my-2">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <span class="mt-5">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <span class="mt-5">Find a Nutrishop</span>
+          <span class="my-2">Open a Nutrishop</span>
+          <span class="my-2">About Us</span>
+        </div>
+        <div class="d-flex flex-column">
+          <form class="border contact-form p-3 mt-5 mt-lg-0">
+            <label for="username" class="ps-1">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="form-control"
+            />
+            <label for="password" class="ps-1 mt-3">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control"
+            />
+            <button
+              id="loginBtn"
+              class="btn w-100 my-3 px-4 py-2 btn-theme-control"
+            >
+              Login
+            </button>
+            <div class="text-center">
+              <span class="d-block">Create New Account</span>
+              <span class="d-block">Request New Password</span>
+            </div>
+          </form>
+        </div>
+      </article>
+    </main>
+
+    <!--Scripts-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="{%static './assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static './assets/js/index.js'%}"></script>
+    <script src="{%static './assets/js/index-theme-changer.js'%}"></script>
+    <script>
+      $(".bb-text").owlCarousel({
+        margin: 10,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          650: {
+            items: 2,
+          },
+          1000: {
+            items: 3,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
