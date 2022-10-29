@@ -110,7 +110,7 @@
         <h4>Trending</h4>
         <div class="bb-text owl-carousel">
 
-          {%for trending in trending %}
+          {%for trending in trending|slice:'0:8' %}
           <div class="cards">
             <a href="" style="text-decoration: none; color: black">
               <img
@@ -119,7 +119,7 @@
               />
               <h4>{{trending.title}}</h4>
               <p>
-               {{trending.body|truncatechars:100}}
+               {{trending.body|truncatechars:70}}
               </p>
               <a href="{{trending.Link}}">
                 <button class="btn py-2 px-3 mb-5 btn-theme-control">
@@ -129,8 +129,16 @@
           </div>
 
           {%endfor%}
+          
         </div>
+        
       </div>
+      <a href="{%url 'supplement' %}">
+        <button class="btn py-2 px-3 mb-5 btn-theme-control " id="car-btn">
+          Shop all products
+        </button>
+      </a>
+      
 
       <!-- the slider section -->
 
@@ -235,7 +243,7 @@
       <div class="container e-text">
         <div class="row gy-3 d-flex justify-content-center">
           <!-- for loop -->
-          {%for blog in blog %}
+          {%for blog in blog|slice:'0:4' %}
           <div class="col-12 col-lg-6 d-flex justify-content-center">
             <div class="e1-text">
               <a href="{%url 'product' blog.id %}" style="text-decoration: none; color: black">
@@ -385,6 +393,7 @@
         loop: true,
         autoplay: true,
         autoplayTimeout: 4000,
+        stagePadding:50,
         autoplayHoverPause: true,
         responsive: {
           0: {

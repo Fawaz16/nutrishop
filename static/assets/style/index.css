@@ -168,7 +168,7 @@ body{
   height: 5px;
   background-color: #b4b4b4 !important;
   margin-right: 10px;
-  
+
   transition: 0.5s ease;
 }
 .owl-dots {
@@ -179,7 +179,9 @@ body{
 .owl-dot.active {
   background-color: rgb(0, 0, 0) !important;
 }
-
+#car-btn{
+  margin-left: 290px;
+}
 .cards {
   background-color: rgb(255, 255, 255) !important;
   box-shadow: 3px 3px 12px rgb(87, 87, 87);
@@ -260,6 +262,9 @@ body{
 
   #nav{
     padding-right: 1rem !important;
+  }
+  #car-btn{
+    margin-left: 120px;
   }
   /* first part stylling */
 
@@ -365,9 +370,18 @@ body{
     padding-left: 70px;
     padding-top: 20px;
   }
+  .carousel img{
+    width: 50% !important;
+  }
+  .cards{
+    height: 400px;
+  }
 }
 
 @media (min-width: 768px) {
+  #nav{
+    padding-right: 1rem !important;
+  }
   .b-text p {
     padding: 20px 140px;
   }
@@ -454,6 +468,12 @@ body{
   .g-text {
     padding-left: 370px;
   }
+  .carousel img{
+    width: 50% !important;
+  }
+  .cards{
+    height: 400px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -464,6 +484,9 @@ body{
     background-size: cover;
     height: 60vh;
     width: 100%;
+  }
+  #car-btn{
+    margin-left: 590px;
   }
 
   /*  */
@@ -496,6 +519,12 @@ body{
   }
   .g-text {
     padding-left: 470px;
+  }
+  .carousel img{
+    width: 50% !important;
+  }
+  .cards{
+    height: 400px;
   }
 }
 

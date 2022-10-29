@@ -128,7 +128,7 @@
               />
               <h4>{{trending.title}}</h4>
               <p>
-               {{trending.body|truncatechars:100}}
+               {{trending.body|truncatechars:70}}
               </p>
               <a href="{{trending.Link}}">
                 <button class="btn py-2 px-3 mb-5 btn-theme-control">
@@ -226,6 +226,7 @@
         loop: true,
         autoplay: true,
         autoplayTimeout: 10000,
+        stagePadding:50,
         autoplayHoverPause: true,
         responsive: {
           0: {
