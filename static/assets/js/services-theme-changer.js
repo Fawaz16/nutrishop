@@ -41,7 +41,7 @@ nightToggler.onclick = () => {
 
         btnThemeControl.forEach((element)=>{
             element.style.backgroundColor = "var(--light-header-color)";
-            element.style.backgroundColor = "var(--light-color)";
+            element.style.color = "var(--light-color)";
         });
 
         saveState("light");

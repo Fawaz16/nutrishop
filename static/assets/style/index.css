@@ -95,10 +95,61 @@ body{
 /* trending stylling */
 
 .carousel {
+  position: relative;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
   overflow: hidden;
+}
+
+.customNextBtn{
+  position: absolute;
+  top:50%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+  z-index: 2;
+}
+
+.customPrevBtn{
+  position: absolute;
+  top:50%;
+  right: 100%;
+  transform: translate(100%, -50%);
+  z-index: 2;
+}
+
+@media (min-width:991px) {
+  .customNextBtn{
+    left: 98%;
+  }
+  .customPrevBtn{
+    right: 98%;
+  }
+}
+@media (max-width:768px) {
+  .customNextBtn{
+    left: 98%;
+  }
+  .customPrevBtn{
+    right: 98%;
+  }
+}
+
+@media (max-width: 700px) {
+  .customNextBtn{
+    left: 95%;
+  }
+  .customPrevBtn{
+    right: 95%;
+  }
+}
+@media (max-width: 576px) {
+  .customNextBtn{
+    left: 95%;
+  }
+  .customPrevBtn{
+    right: 95%;
+  }
 }
 
 .carousel h4 {
@@ -205,6 +256,11 @@ body{
 
 
 @media (max-width: 768px) {
+
+
+  #nav{
+    padding-right: 1rem !important;
+  }
   /* first part stylling */
 
   .a-text a img {
@@ -402,7 +458,7 @@ body{
 
 @media (min-width: 1024px) {
   .a-text {
-    background: url(../image/1666936703644.png);
+    background: url(../image/banner.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -457,7 +513,7 @@ body{
 
 @media (min-width: 1024px) {
   .a-text {
-    background: url(../image/1666936703644.png);
+    background: url(../image/1666871040206.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -517,3 +573,5 @@ body{
     display: none;
   }
 }
+
+

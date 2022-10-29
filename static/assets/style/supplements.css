@@ -16,12 +16,3 @@
 .product-name{
     color: var(--light-header-color);
 }
-#newReleases{
-    padding-left: 50px;
-}
-
-@media(max-width:768px){
-    #newReleases{
-        padding-left: 10px;
-    }
-}
